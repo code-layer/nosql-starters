@@ -41,7 +41,7 @@ java -jar target/nosql-starter-springboot-1.0-SNAPSHOT.jar
 
 ```
 
-## ?? Links
+## Links
 [Datalayer](https://datalayer.in/)
 
 ## Contributing
