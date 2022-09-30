@@ -1,5 +1,5 @@
 # nosql-starters
-Nosql starters provide babe bones code setup for MongoDB with Java and Spring Boot coding. Conquer datalayer.
+Nosql starters provide bare bones code setup for MongoDB with Java and Spring Boot coding. Conquer datalayer.
 
 
 ## Install dependencies
