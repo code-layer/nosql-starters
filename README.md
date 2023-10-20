@@ -20,6 +20,8 @@ Go to directory nosql-starter-java
 ``` java
 //make mongodb connection changes in MongoConfig.java
 //private String uri="mongodb://nosqlfree:vQ6ZbFmv5@x.x.x.x:27017/?authSource=admin";
+//change database and collection names in Application.java
+
 //build fat jar
 mvn clean package
 
@@ -33,6 +35,8 @@ Go to directory nosql-starter-springboot
 
 ``` java
 //make mongodb connection changes in application.properties
+//Uses mongo spring Repository model to interact with collection. To try use provided college schema and sample data
+
 //build project
 mvn clean package
 
