@@ -1,0 +1,103 @@
+Create mongo collection with schema validation
+---
+
+db.createCollection("college", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "_id", "collegeName" ],
+         properties: {
+            _id: {
+               bsonType: "int"
+            },
+            collegeName: {
+	      bsonType: "string"
+            },
+            city: {
+	      bsonType: "string"
+            },
+            state: {
+	      bsonType: "string"
+            },
+            branches :{
+              bsonType: "array"
+            },
+            address: {
+               bsonType: "object",
+               required: [ "line1","line2", "city", "pinCode" ],
+               properties: {
+                  line1: {
+                     bsonType: "string"
+                  },
+                  line2: {
+                     bsonType: "string"
+                  },
+                  city: {
+                     bsonType: "string"
+                  },
+                  pinCode: {
+                     bsonType: "int"
+                  }
+               }
+            }
+         }
+      }
+   }
+})
+
+
+Sample data for college schema
+---
+
+db.college.insertMany(
+[
+{
+    "_id" : 1001,
+    "collegeName" : "Sri Venkateswara University Engineering College",
+    "city" : "Tirupathi",
+    "state" : "Andhra Pradesh"
+},
+{
+    "_id" : 1002,
+    "collegeName" : "Osmania University Engineering College",
+    "city" : "Hyderabad",
+    "state" : "Telangana",
+    "branches" : [
+        "ECE",
+        "CS",
+        "Production Engineering",
+        "Data Science"
+    ]
+},
+{
+    "_id" : 1003,
+    "collegeName" : "Andhra University Engineering College",
+    "city" : "Visakhapatnam",
+    "state" : "Andhra Pradesh",
+    "branches" : [
+        "ECE",
+        "CS"
+    ],
+    "address" : {
+        "line1" : "Junction, Andhra University South Campus",
+        "line2" : "Andhra University",
+        "city" : "Visakhapatnam",
+        "pinCode" : 530003
+    }
+},
+{
+    "_id" : 1004,
+    "collegeName" : "JNTU Anatapur Engineering College",
+    "city" : "Anantapur"
+},
+{
+    "_id" : 1005,
+    "collegeName" : "Nagarjuna University"
+},
+{
+    "_id" : 1006,
+    "collegeName" : "JNTU Kakinada Engineering College",
+    "city" : "Kakinada"
+}
+]
+);
